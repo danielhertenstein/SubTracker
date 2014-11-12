@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ListPopupWindow;
-import android.widget.PopupMenu;
 
 
 public class FormationView extends Activity {
@@ -41,7 +39,7 @@ public class FormationView extends Activity {
     }
 
     public void openSubList(View view) {
-        ListPopupWindow player_list_popup = new ListPopupWindow(FormationView.this);
-        
+        PlayerListFragment dialog = new PlayerListFragment();
+        dialog.show(getFragmentManager(), "PlayerListFragment");
     }
 }
