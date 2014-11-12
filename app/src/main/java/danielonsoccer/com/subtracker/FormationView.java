@@ -1,13 +1,15 @@
 package danielonsoccer.com.subtracker;
 
 import android.app.Activity;
+import android.app.DialogFragment;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 
-public class FormationView extends Activity {
+public class FormationView extends Activity
+                           implements PlayerListFragment.PlayerListListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,5 +43,15 @@ public class FormationView extends Activity {
     public void openSubList(View view) {
         PlayerListFragment dialog = new PlayerListFragment();
         dialog.show(getFragmentManager(), "PlayerListFragment");
+    }
+
+    @Override
+    public void onDialogItemClick(DialogFragment dialog) {
+        // Substitute player
+    }
+
+    @Override
+    public void onDialogNegativeClick(DialogFragment dialog) {
+        // Be sad?
     }
 }
