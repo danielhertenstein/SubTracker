@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="player_list_array">
+        <item>player one</item>
+        <item>player two</item>
+        <item>player three</item>
+        <item>player four</item>
+        <item>player five</item>
+        <item>player six</item>
+        <item>player seven</item>
+        <item>player eight</item>
+        <item>player nine</item>
+        <item>player ten</item>
+        <item>player eleven</item>
+        <item>player twelve</item>
+    </string-array>
+</resources>
