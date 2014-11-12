@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="player_list_array">
-        <item>player one</item>
-        <item>player two</item>
-        <item>player three</item>
-        <item>player four</item>
-        <item>player five</item>
-        <item>player six</item>
-        <item>player seven</item>
-        <item>player eight</item>
-        <item>player nine</item>
-        <item>player ten</item>
-        <item>player eleven</item>
-        <item>player twelve</item>
+        <item>@string/player_one</item>
+        <item>@string/player_two</item>
+        <item>@string/player_three</item>
+        <item>@string/player_four</item>
+        <item>@string/player_five</item>
+        <item>@string/player_six</item>
+        <item>@string/player_seven</item>
+        <item>@string/player_eight</item>
+        <item>@string/player_nine</item>
+        <item>@string/player_ten</item>
+        <item>@string/player_eleven</item>
+        <item>@string/player_twelve</item>
     </string-array>
 </resources>

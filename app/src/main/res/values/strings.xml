@@ -7,4 +7,18 @@
     <string name="cancel">Cancel</string>
     <string name="player_list">Player List</string>
 
+    // Strings for the player list array.
+    <string name="player_one">player one</string>
+    <string name="player_two">player two</string>
+    <string name="player_three">player three</string>
+    <string name="player_four">player four</string>
+    <string name="player_five">player five</string>
+    <string name="player_six">player six</string>
+    <string name="player_seven">player seven</string>
+    <string name="player_eight">player eight</string>
+    <string name="player_nine">player nine</string>
+    <string name="player_ten">player ten</string>
+    <string name="player_eleven">player eleven</string>
+    <string name="player_twelve">player twelve</string>
+
 </resources>
