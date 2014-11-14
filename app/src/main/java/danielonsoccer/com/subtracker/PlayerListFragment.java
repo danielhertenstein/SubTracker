@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
+import android.content.res.Resources;
 import android.os.Bundle;
 
 /**
@@ -12,7 +13,7 @@ import android.os.Bundle;
  */
 public class PlayerListFragment extends DialogFragment {
     public interface PlayerListListener {
-        public void onDialogItemClick(DialogFragment dialog);
+        public void onDialogItemClick(DialogFragment dialog, String playerName);
         public void onDialogNegativeClick(DialogFragment dialog);
     }
     PlayerListListener listener;
@@ -34,7 +35,9 @@ public class PlayerListFragment extends DialogFragment {
                 .setItems(R.array.player_list_array, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        listener.onDialogItemClick(PlayerListFragment.this);
+                        Resources res = getResources();
+                        String[] playerList = res.getStringArray(R.array.player_list_array);
+                        listener.onDialogItemClick(PlayerListFragment.this, playerList[which]);
                     }
                 })
                 .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {

@@ -46,7 +46,7 @@ public class FormationView extends Activity
     }
 
     @Override
-    public void onDialogItemClick(DialogFragment dialog) {
+    public void onDialogItemClick(DialogFragment dialog, String playerName) {
         // Substitute player
     }
 
