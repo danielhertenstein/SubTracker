@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 
 public class FormationView extends Activity
@@ -47,6 +48,8 @@ public class FormationView extends Activity
 
     @Override
     public void onDialogItemClick(DialogFragment dialog, String playerName) {
+        Button button = (Button)findViewById(R.id.button);
+        button.setText(playerName);
         // Substitute player
     }
 
