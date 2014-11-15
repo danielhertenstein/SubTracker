@@ -2,17 +2,21 @@ package danielonsoccer.com.subtracker;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.SystemClock;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
+import android.widget.TextView;
 
 
 public class FormationView extends Activity {
 
     Chronometer playerDuration;
+    TextView substitutionTimer;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +24,15 @@ public class FormationView extends Activity {
         setContentView(R.layout.activity_formation_view);
         playerDuration = (Chronometer)findViewById(R.id.chronometer);
         playerDuration.start();
+        substitutionTimer = (TextView)findViewById(R.id.substitution_interval_timer);
+        new CountDownTimer(300000, 1000) {
+            public void onTick(long millisUntilFinished) {
+                substitutionTimer.setText(String.valueOf(millisUntilFinished / 1000));
+            }
+            public void onFinish() {
+                this.start();
+            }
+        }.start();
     }
 
 
