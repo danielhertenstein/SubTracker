@@ -14,16 +14,15 @@ public class PlayerListFragment extends DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle(R.string.player_list)
+        return new AlertDialog.Builder(getActivity())
+                .setTitle(R.string.player_list)
                 .setItems(R.array.player_list_array, new DialogInterface.OnClickListener() {
-                    @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Resources res = getResources();
                         String[] playerList = res.getStringArray(R.array.player_list_array);
                         ((FormationView)getActivity()).doItemClick(playerList[which]);
                     }
-                });
-        return builder.create();
+                })
+                .create();
     }
 }
