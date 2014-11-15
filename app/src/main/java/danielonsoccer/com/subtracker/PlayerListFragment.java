@@ -12,15 +12,24 @@ import android.os.Bundle;
  */
 public class PlayerListFragment extends DialogFragment {
 
+    public static PlayerListFragment newInstance(int itemList) {
+        PlayerListFragment fragment = new PlayerListFragment();
+        Bundle args = new Bundle();
+        args.putInt("itemList", itemList);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+        final int itemList = getArguments().getInt("itemList");
         return new AlertDialog.Builder(getActivity())
                 .setTitle(R.string.player_list)
-                .setItems(R.array.player_list_array, new DialogInterface.OnClickListener() {
+                .setItems(itemList, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         Resources res = getResources();
-                        String[] playerList = res.getStringArray(R.array.player_list_array);
-                        ((FormationView)getActivity()).doItemClick(playerList[which]);
+                        String[] playerList = res.getStringArray(itemList);
+                        ((FormationView) getActivity()).doItemClick(playerList[which]);
                     }
                 })
                 .create();

@@ -40,7 +40,7 @@ public class FormationView extends Activity {
     }
 
     public void openSubList(View view) {
-        PlayerListFragment dialog = new PlayerListFragment();
+        PlayerListFragment dialog = PlayerListFragment.newInstance(R.array.player_list_array);
         dialog.show(getFragmentManager(), "PlayerListFragment");
     }
 
