@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.TextView;
 
+import java.util.concurrent.TimeUnit;
+
 
 public class FormationView extends Activity {
 
@@ -22,13 +24,18 @@ public class FormationView extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formation_view);
-        playerDuration = (Chronometer)findViewById(R.id.chronometer);
+        playerDuration = (Chronometer) findViewById(R.id.chronometer);
         playerDuration.start();
-        substitutionTimer = (TextView)findViewById(R.id.substitution_interval_timer);
+        substitutionTimer = (TextView) findViewById(R.id.substitution_interval_timer);
         new CountDownTimer(300000, 1000) {
             public void onTick(long millisUntilFinished) {
-                substitutionTimer.setText(String.valueOf(millisUntilFinished / 1000));
+                substitutionTimer.setText(String.format("%02d:%02d",
+                        TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished),
+                        TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) -
+                                TimeUnit.MINUTES.toSeconds(
+                                        TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished))));
             }
+
             public void onFinish() {
                 this.start();
             }
@@ -64,7 +71,7 @@ public class FormationView extends Activity {
     }
 
     public void doItemClick(String playerName) {
-        Button button = (Button)findViewById(R.id.button);
+        Button button = (Button) findViewById(R.id.button);
         button.setText(playerName);
         // Substitute player
         playerDuration.setBase(SystemClock.elapsedRealtime());
