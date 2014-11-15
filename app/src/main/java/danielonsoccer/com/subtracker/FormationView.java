@@ -2,18 +2,24 @@ package danielonsoccer.com.subtracker;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Chronometer;
 
 
 public class FormationView extends Activity {
+
+    Chronometer playerDuration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formation_view);
+        playerDuration = (Chronometer)findViewById(R.id.chronometer);
+        playerDuration.start();
     }
 
 
@@ -48,5 +54,6 @@ public class FormationView extends Activity {
         Button button = (Button)findViewById(R.id.button);
         button.setText(playerName);
         // Substitute player
+        playerDuration.setBase(SystemClock.elapsedRealtime());
     }
 }
