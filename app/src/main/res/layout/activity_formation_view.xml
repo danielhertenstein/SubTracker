@@ -33,7 +33,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
+        android:text="@string/default_substitution_time"
         android:id="@+id/substitution_interval_timer"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"

@@ -6,6 +6,7 @@
     <string name="player_name">Steven Gerrard</string>
     <string name="cancel">Cancel</string>
     <string name="player_list">Player List</string>
+    <string name="default_substitution_time">05:00</string>
 
     // Strings for the player list array.
     <string name="player_one">player one</string>
