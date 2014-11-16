@@ -1,6 +1,9 @@
 package danielonsoccer.com.subtracker;
 
 import android.app.Activity;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.SystemClock;
@@ -37,6 +40,9 @@ public class FormationView extends Activity {
             }
 
             public void onFinish() {
+                Uri alarm = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
+                Ringtone ringtone = RingtoneManager.getRingtone(getApplicationContext(), alarm);
+                ringtone.play();
                 this.start();
             }
         }.start();
