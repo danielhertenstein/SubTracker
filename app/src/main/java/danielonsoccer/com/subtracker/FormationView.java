@@ -1,12 +1,11 @@
 package danielonsoccer.com.subtracker;
 
 import android.app.Activity;
-import android.media.Ringtone;
-import android.media.RingtoneManager;
-import android.net.Uri;
+import android.content.Context;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.SystemClock;
+import android.os.Vibrator;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,7 +19,8 @@ import java.util.concurrent.TimeUnit;
 public class FormationView extends Activity {
 
     Chronometer playerDuration;
-    TextView substitutionTimer;
+    TextView substitutionTimerTextView;
+    CountDownTimer substitutionTimer;
 
 
     @Override
@@ -29,10 +29,10 @@ public class FormationView extends Activity {
         setContentView(R.layout.activity_formation_view);
         playerDuration = (Chronometer) findViewById(R.id.chronometer);
         playerDuration.start();
-        substitutionTimer = (TextView) findViewById(R.id.substitution_interval_timer);
-        new CountDownTimer(300000, 1000) {
+        substitutionTimerTextView = (TextView) findViewById(R.id.substitution_interval_timer);
+        substitutionTimer = new CountDownTimer(300000, 1000) {
             public void onTick(long millisUntilFinished) {
-                substitutionTimer.setText(String.format("%02d:%02d",
+                substitutionTimerTextView.setText(String.format("%02d:%02d",
                         TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished),
                         TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) -
                                 TimeUnit.MINUTES.toSeconds(
@@ -40,9 +40,10 @@ public class FormationView extends Activity {
             }
 
             public void onFinish() {
-                Uri alarm = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
-                Ringtone ringtone = RingtoneManager.getRingtone(getApplicationContext(), alarm);
-                ringtone.play();
+                Vibrator vibrator = (Vibrator) getApplicationContext().getSystemService(Context
+                        .VIBRATOR_SERVICE);
+                long[] vibratePattern = {0, 500, 500, 500, 500, 500, 500};
+                vibrator.vibrate(vibratePattern, -1);
                 this.start();
             }
         }.start();
