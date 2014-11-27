@@ -78,8 +78,8 @@ public class FormationView extends Activity {
     }
 
     public void doItemClick(String playerName) {
-        Button button = (Button) findViewById(R.id.button);
-        button.setText(playerName);
+        TextView textView = (TextView) findViewById(R.id.current_player);
+        textView.setText(playerName);
         // Substitute player
         playerDuration.setBase(SystemClock.elapsedRealtime());
     }
