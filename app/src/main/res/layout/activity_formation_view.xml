@@ -12,7 +12,6 @@
 
     <Button
         android:id="@+id/button"
-        style="?android:attr/buttonStyleSmall"
         android:layout_width="@dimen/floating_action_button_diameter"
         android:layout_height="@dimen/floating_action_button_diameter"
         android:text="@string/player_name"
