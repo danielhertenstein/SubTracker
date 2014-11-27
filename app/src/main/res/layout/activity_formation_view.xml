@@ -13,14 +13,15 @@
     <Button
         android:id="@+id/button"
         style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/floating_action_button_diameter"
+        android:layout_height="@dimen/floating_action_button_diameter"
         android:text="@string/player_name"
         android:clickable="true"
-        android:background="@drawable/round_button"
+        android:background="@drawable/oval_ripple"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:onClick="openSubList" />
+        android:onClick="openSubList"
+        android:elevation="@dimen/elevation_low"/>
 
     <Chronometer
         android:layout_width="wrap_content"
@@ -28,7 +29,7 @@
         android:id="@+id/chronometer"
         android:layout_below="@+id/button"
         android:layout_centerHorizontal="true"
-        android:background="#fff" />
+        android:background="#000000" />
 
     <TextView
         android:layout_width="wrap_content"
