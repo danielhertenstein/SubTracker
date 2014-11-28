@@ -27,7 +27,7 @@ public class FormationView extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formation_view);
-        playerDuration = (Chronometer) findViewById(R.id.chronometer);
+        playerDuration = (Chronometer) findViewById(R.id.lf_chronometer);
         playerDuration.start();
         substitutionTimerTextView = (TextView) findViewById(R.id.substitution_interval_timer);
         substitutionTimer = new CountDownTimer(300000, 1000) {
@@ -78,7 +78,7 @@ public class FormationView extends Activity {
     }
 
     public void doItemClick(String playerName) {
-        TextView textView = (TextView) findViewById(R.id.current_player);
+        TextView textView = (TextView) findViewById(R.id.current_lf);
         textView.setText(playerName);
         // Substitute player
         playerDuration.setBase(SystemClock.elapsedRealtime());

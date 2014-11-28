@@ -3,11 +3,10 @@
 
     <string name="app_name">SubTracker</string>
     <string name="action_settings">Settings</string>
-    <string name="player_name">Steven Gerrard</string>
+    <string name="player_name">Steven G.</string>
     <string name="cancel">Cancel</string>
     <string name="player_list">Player List</string>
     <string name="default_substitution_time">05:00</string>
-
     // Strings for the player list array.
     <string name="player_one">player one</string>
     <string name="player_two">player two</string>
@@ -21,5 +20,4 @@
     <string name="player_ten">player ten</string>
     <string name="player_eleven">player eleven</string>
     <string name="player_twelve">player twelve</string>
-
 </resources>
