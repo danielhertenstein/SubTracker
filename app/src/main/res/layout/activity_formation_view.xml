@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="@dimen/activity_horizontal_margin"
-        android:weightSum="1"
+        android:weightSum="4"
         android:stretchColumns="*"
         android:shrinkColumns="*">
 
@@ -27,12 +27,12 @@
         </TableRow>
 
         <!-- Forwards -->
-        <TableRow>
+        <TableRow android:layout_weight="1">
             <!-- Left Forward -->
             <RelativeLayout
                 android:id="@+id/lf_layout"
                 android:layout_span="3"
-                android:gravity="center">
+                android:layout_gravity="center_horizontal|bottom">
 
                 <Chronometer
                     android:id="@+id/lf_chronometer"
@@ -75,7 +75,7 @@
             <RelativeLayout
                 android:id="@+id/rf_layout"
                 android:layout_span="3"
-                android:gravity="center">
+                android:layout_gravity="center_horizontal|bottom">
 
                 <Chronometer
                     android:id="@+id/rf_chronometer"
@@ -116,12 +116,12 @@
         </TableRow>
 
         <!-- Midfielders -->
-        <TableRow>
+        <TableRow android:layout_weight="1">
             <!-- Left Midfielder -->
             <RelativeLayout
                 android:id="@+id/lm_layout"
                 android:layout_span="2"
-                android:gravity="center">
+                android:layout_gravity="center_horizontal|bottom">
 
                 <Chronometer
                     android:id="@+id/lm_chronometer"
@@ -164,7 +164,7 @@
             <RelativeLayout
                 android:id="@+id/cm_layout"
                 android:layout_span="2"
-                android:gravity="center">
+                android:layout_gravity="center_horizontal|bottom">
 
                 <Chronometer
                     android:id="@+id/cm_chronometer"
@@ -207,7 +207,7 @@
             <RelativeLayout
                 android:id="@+id/rm_layout"
                 android:layout_span="2"
-                android:gravity="center">
+                android:layout_gravity="center_horizontal|bottom">
 
                 <Chronometer
                     android:id="@+id/rm_chronometer"
@@ -248,12 +248,12 @@
         </TableRow>
 
         <!-- Backs -->
-        <TableRow>
+        <TableRow android:layout_weight="1">
             <!-- Left Back -->
             <RelativeLayout
                 android:id="@+id/lb_layout"
                 android:layout_span="3"
-                android:gravity="center">
+                android:layout_gravity="center_horizontal|bottom">
 
                 <Chronometer
                     android:id="@+id/lb_chronometer"
@@ -296,7 +296,7 @@
             <RelativeLayout
                 android:id="@+id/rb_layout"
                 android:layout_span="3"
-                android:gravity="center">
+                android:layout_gravity="center_horizontal|bottom">
 
                 <Chronometer
                     android:id="@+id/rb_chronometer"
@@ -340,7 +340,7 @@
         <RelativeLayout
             android:id="@+id/gk_layout"
             android:layout_weight="1"
-            android:gravity="center"
+            android:gravity="center_horizontal|bottom"
             android:layout_width="wrap_content">
 
             <android.support.v7.widget.CardView
