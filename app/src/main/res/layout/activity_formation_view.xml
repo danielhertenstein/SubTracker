@@ -28,10 +28,12 @@
 
         <!-- Forwards -->
         <TableRow android:layout_weight="1">
+
             <!-- Left Forward -->
             <RelativeLayout
                 android:id="@+id/lf_layout"
                 android:layout_span="3"
+                android:transformPivotY="1.0"
                 android:layout_gravity="center_horizontal|bottom">
 
                 <Chronometer
@@ -410,6 +412,7 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="@dimen/activity_horizontal_margin"
         android:clickable="true"
+        android:onClick="resetCard"
         android:background="@drawable/oval_ripple_primary"
         android:elevation="@dimen/fab_elevation_low"
         android:stateListAnimator="@animator/fab_elevation"
